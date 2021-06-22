@@ -1,0 +1,325 @@
+/*Lo que hace el codigo agregado de box-sizing es que si
+se agrega un  ancho o un padding
+no siga creciendo su tamaño*/
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*Reset para REMS --> 62.5% = 10px de 16px*/
+
+}
+
+
+*, *:before, *:after{
+    box-sizing: inherit ;
+}
+
+ 
+/*Los rem nos asegura que en todos los dispoisitivos se verá iguales*/
+body{ /*Es para que modifique a todo el documento*/
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+
+
+/*GLOBALES*/
+
+.cont-header{
+    max-width: 90rem; /*900px*/
+    margin: 0 auto;
+}
+
+/*En todos los proyectos debe ir, esto nos permite que todas las imagenes sean responsive*/
+img{
+    max-width: 100%;
+}
+
+/*Se recomienda poner un tamaño inicial para todo el documento*/
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+    font-size: 2.6rem;
+}
+
+/*UTILIDADES*/
+.seccion{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.fw-300{
+    font-weight: 300;
+}
+.centrar-texto{
+    text-align: center;
+}
+
+.d-block{
+    display: block !important;
+}
+
+/*BOTONES*/
+.boton{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.boton-naranja{
+    background-color: #E08709;
+}
+
+.boton-verde{
+    background-color: #71B100;
+}
+
+.ver-todas{ 
+   display: flex;
+   justify-content:flex-end;
+}
+
+
+
+
+
+/*HEADER*/
+.site-header.inicio{
+    background-image: url(../img/header.jpg); /*Tamb puede ir solo backgroud, es más generico, acepta color e imagen*/
+    height: 100vh; /*Toma la altura de la pantalla*/
+    min-height: 60rem; /* 600px*//*Mide el 100% de la pantalla, pero minimo debe ser esto*/
+    background-position: center center;/*Muestrame la imagen desde el centro y expandela*/
+    background-size: cover; /*Fuerza que tome todo el ancho y alto, pero siemre guardando las proporciones*/
+
+}
+.barra-header{
+    display: flex; /*Es para trabajar la unicacion*/
+    justify-content: space-between; /*Para que los elementos de la barra se posicionen uno a la derecha y otro a la izquierda*/
+    /*justify-content -> me permite alinear los elementos horizontalmente*/
+    align-items: center;
+    padding-top: 3rem; /*30px;*/
+}
+/*Ambos estilos aplican lo mismo*/
+.contenido-header{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.contenido-header h1{
+    color: white;
+    padding-bottom: 3rem ;
+    max-width: 60rem;
+    line-height: 2; /*Interlineado de 2 lineas*/
+}
+/*
+.contenido-header{
+    display: flexbox;
+}
+*/
+
+/*NAVEGACION*/
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem ; /* == 18px*/
+    margin-right: 2rem; /*20px; Separacion con el siguiente elemento*/
+
+}
+.navegacion a:hover{
+    color: #71B100
+}
+.navegacion a:last-of-type{ /*Al ultimo elemento de la lista*/
+    margin-right: 0;
+
+}
+
+/*iconos nosostros*/
+.iconos-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+.icono{
+    flex-basis: calc(33.3% - 1rem);
+    text-align:center;
+}
+
+.icono h3{
+    text-transform: uppercase;
+}
+
+/*ANUNCIOS*/
+.cont-anuncios{
+    display: flex;
+    justify-content: space-between;
+}
+.anuncio{
+    flex-basis: calc(33.3% - 1rem);
+    border: 1px solid #B5B5B5;
+    background-color: #f5f5f5;
+   /* border-style: solid;
+    border-color: #B5B5B5;
+    border-width: 1px;*/ 
+}
+
+.contenido-anuncio{
+   padding: 2rem;
+}
+
+.contenido-anuncio h3, p{
+    margin: 0;
+}
+
+.precio{
+    color: #71B100;
+    font-weight: 700;
+}
+
+.iconos-caracteristicas{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content:space-evenly;
+
+}
+
+.iconos-caracteristicas li{
+   /*  flex: 1; */
+    display: flex;
+} 
+
+.iconos-caracteristicas li img{
+    margin-right: 1rem;
+}
+
+
+/*Contacto Home*/
+
+.img-contacto{
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center ;
+    background-size: cover;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+
+}
+.contenido-contacto{
+    flex: 1; /*Factor de crecimiento, detecta cuanto tamaño hay disponible y cuantos elementos hay, y le asigna a cada elemento el valor  Si hay dos elemento un tam de 1000 a cada elemento se le asigna 500*/
+    color: white;    
+}
+
+.contenido-contacto p{
+    font-size: 1.8rem;
+}
+
+
+
+/*SECCION INFERIOR*/
+
+.seccion-inferior{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .seccion-inferior  */.blog{
+    flex-basis: 60%;
+}
+
+.seccion-inferior .testimoniales{
+    flex-basis: calc(40% - 2rem);
+}
+
+.entrada-blog{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.entrada-blog:last-of-type{
+    margin-bottom: 0;
+}
+
+.entrada-blog .img-blog{
+    flex-basis: 40%;
+}
+.entrada-blog .txt-blog{
+    flex-basis: calc(60% - 2rem);
+}
+.txt-blog a{
+    color: black;
+    text-decoration: none;
+}
+.txt-blog h4{
+    margin: 0;
+    line-height: 1.8;
+    font-size: 1.9rem;   
+}
+
+.txt-blog h4::after{
+    content: '';
+    display: block;
+    width: 15rem;
+    height: .5rem;
+    background-color:#71B100;
+    margin-top: 1rem;
+}
+.txt-blog span{
+    color: #E08709;
+}
+
+/*TESTIMONIALES*/
+.testimonial{
+    background-color: #71B100;
+    font-size: 2rem;
+    padding: 2rem;
+    color: white;
+    border-radius: 2rem;
+}
+
+.testimonial p{
+    text-align: right;
+}
+
+.testimonial blockquote::before{
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: -2rem;
+}
+
+.testimonial blockquote{
+    position: relative;
+    padding-left: 5rem;
+    font-weight: 300;
+}
+
+/*FOOTER*/
+.site-footer{
+    background-color: #333333;
+    margin: 0;
+}
+.contenido-footer{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright{
+    margin: 0;
+    color: white;
+}
