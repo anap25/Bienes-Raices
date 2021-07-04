@@ -65,6 +65,10 @@ h4{
     display: block !important;
 }
 
+.contenido-centrado{
+    max-width: 800px;
+}
+
 /*BOTONES*/
 .boton{
     color: white;
@@ -168,10 +172,13 @@ h4{
 .cont-anuncios{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; 
 }
 .anuncio{
-    flex-basis: calc(33.3% - 1rem);
+    flex: 0 0 calc(33.3% - 1rem);
+    /*flex-shrink: 0; Es para que el contendio se haga más pequeño si es posible. está en 0 para que no se encoja y toma el tamaño de la base*/
     border: 1px solid #B5B5B5;
+    margin-bottom: 2rem;
     background-color: #f5f5f5;
    /* border-style: solid;
     border-color: #B5B5B5;
@@ -196,6 +203,8 @@ h4{
     padding: 0;
     display: flex;
     justify-content:space-evenly;
+    max-width: 500px;
+    flex: 1;
 
 }
 
@@ -341,3 +350,11 @@ h4{
     margin: 0;
     padding: 1rem 0 3rem 0;
 }
+
+/*Ver propiedad*/
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
